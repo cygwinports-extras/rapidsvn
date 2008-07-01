@@ -1,0 +1,103 @@
+rapidsvn
+------------------------------------------
+RapidSVN is a cross-platform GUI front-end for the Subversion revision 
+system written in C++ using the wxWidgets framework. This project also 
+includes a Subversion client C++ API.
+
+Runtime requirements:
+  cygwin-1.5.25-15
+  libapr1-1.2.12-1
+  libaprutil1-1.2.12-1
+  subversion-1.4.6-1
+  wx28-base-2.8.8.0-1
+  wx28-gtk2-2.8.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf2.5-2.61-1
+  automake1.9-1.9.6-2
+  binutils-20080523-1
+  cppunit-1.12.0-1
+  cygport-0.3.11-1
+  gawk-3.1.6-1
+  gcc-core-3.4.4-3
+  gcc-g++-3.4.4-3
+  libtool-2.2.2-2
+  make-3.81-1
+  sed-4.1.5-2
+
+Canonical website:
+  http://rapidsvn.tigris.org/
+
+Canonical download:
+  http://www.rapidsvn.org/download/release/
+
+-------------------------------------------
+
+Build instructions:
+  unpack rapidsvn-0.9.6-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./rapidsvn-0.9.6-X.cygport all
+
+This will create:
+  /usr/src/libsvncpp-devel-0.9.6-X.tar.bz2
+  /usr/src/libsvncpp1-0.9.6-X.tar.bz2
+  /usr/src/rapidsvn-0.9.6-X-src.tar.bz2
+  /usr/src/rapidsvn-0.9.6-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary packages:
+
+(rapidsvn)
+  /usr/bin/rapidsvn.exe
+  /usr/share/doc/rapidsvn-0.9.6/AUTHORS
+  /usr/share/doc/rapidsvn-0.9.6/COPYING
+  /usr/share/doc/rapidsvn-0.9.6/ChangeLog
+  /usr/share/doc/rapidsvn-0.9.6/Changes
+  /usr/share/doc/rapidsvn-0.9.6/GPL.txt
+  /usr/share/doc/rapidsvn-0.9.6/HACKING.txt
+  /usr/share/doc/rapidsvn-0.9.6/INSTALL
+  /usr/share/doc/rapidsvn-0.9.6/LICENSE.txt
+  /usr/share/doc/rapidsvn-0.9.6/NEWS
+  /usr/share/doc/rapidsvn-0.9.6/README
+
+(libsvncpp1)
+  /usr/bin/cygsvncpp-1.dll
+
+(libsvncpp-devel)
+  /usr/include/svncpp/annotate_line.hpp
+  /usr/include/svncpp/apr.hpp
+  /usr/include/svncpp/client.hpp
+  /usr/include/svncpp/context.hpp
+  /usr/include/svncpp/context_listener.hpp
+  /usr/include/svncpp/datetime.hpp
+  /usr/include/svncpp/dirent.hpp
+  /usr/include/svncpp/entry.hpp
+  /usr/include/svncpp/exception.hpp
+  /usr/include/svncpp/info.hpp
+  /usr/include/svncpp/log_entry.hpp
+  /usr/include/svncpp/path.hpp
+  /usr/include/svncpp/pool.hpp
+  /usr/include/svncpp/property.hpp
+  /usr/include/svncpp/revision.hpp
+  /usr/include/svncpp/status.hpp
+  /usr/include/svncpp/status_selection.hpp
+  /usr/include/svncpp/targets.hpp
+  /usr/include/svncpp/url.hpp
+  /usr/include/svncpp/wc.hpp
+  /usr/lib/libsvncpp.dll.a
+  /usr/lib/libsvncpp.la
+
+------------------
+
+Port Notes:
+
+----- version 0.9.6-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
