@@ -1,0 +1,25 @@
+--- origsrc/rapidsvn-0.9.8/src/Makefile.am	2009-03-17 15:51:30.000000000 -0500
++++ src/rapidsvn-0.9.8/src/Makefile.am	2009-03-31 17:04:05.425984000 -0500
+@@ -86,10 +86,8 @@ rapidsvn_SOURCES= \
+ 	verblist.cpp \
+ 	view_action.cpp 
+ 
+-rapidsvn_LDFLAGS=-Lsvncpp
+-rapidsvn_LDADD= -lsvncpp \
++rapidsvn_LDADD= svncpp/libsvncpp.la \
+ 	$(SVN_LIBS) \
+ 	$(APR_LIBS) \
+ 	$(WX_LIBS) \
+ 	$(EXTRA_LIBS)
+-rapidsvn_DEPENDENCIES=svncpp/libsvncpp.la
+--- origsrc/rapidsvn-0.9.8/src/svncpp/Makefile.am	2009-03-31 13:08:50.265625000 -0500
++++ src/rapidsvn-0.9.8/src/svncpp/Makefile.am	2009-03-31 13:09:10.875000000 -0500
+@@ -3,7 +3,7 @@ EXTRA_DIST=svncpp.dsp
+ 
+ lib_LTLIBRARIES=libsvncpp.la
+ 
+-libsvncpp_la_LDFLAGS=-version-info 2:0:0
++libsvncpp_la_LDFLAGS=-version-info 2:0:0 -no-undefined
+ libsvncpp_la_SOURCES= \
+ 	apr.cpp \
+ 	client.cpp \

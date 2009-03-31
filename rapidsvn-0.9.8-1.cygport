@@ -7,15 +7,14 @@ HOMEPAGE="http://rapidsvn.tigris.org/"
 SRC_URI="http://www.rapidsvn.org/download/release/${PV}/${P}.tar.gz"
 PATCH_URI="
 	mirror://portage/dev-util/${PN}/files/${PN}-svncpp_link.patch
-	mirror://portage/dev-util/${PN}/files/${PN}-sar.patch
+	0.9.8-no-undefined.patch
+	0.9.6-vpath.patch
 "
 
-abi=1
-PKG_NAMES="${PN} libsvncpp${abi} libsvncpp-devel"
-PKG_HINTS="bin lib devel"
-PKG_CONTENTS[0]="usr/bin/*.exe usr/share/"
-PKG_CONTENTS[1]="usr/bin/*-${abi}.dll"
-PKG_CONTENTS[2]="usr/include/ usr/lib/"
+PKG_NAMES="${PN} libsvncpp2 libsvncpp-devel"
+rapidsvn_CONTENTS="etc/ usr/bin/*.exe usr/share/"
+libsvncpp2_CONTENTS="usr/bin/*-2.dll"
+libsvncpp_devel_CONTENTS="usr/include/ usr/lib/"
 
 CYGCONF_ARGS="
 	--disable-static
@@ -32,4 +31,17 @@ src_test() {
 	cd ${B}/src/tests/svncpp
 	cygmake
 	./svncpptest
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	for i in 16x16 32x32 48x48 128x128
+	do
+		insinto /usr/share/icons/hicolor/${i}/apps
+		newins ${S}/src/res/bitmaps/${PN}_${i}.png ${PN}.png
+	done
+
+	make_desktop_entry ${PN} RapidSVN ${PN} "Development;RevisionControl"
 }

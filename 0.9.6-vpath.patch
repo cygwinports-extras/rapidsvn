@@ -1,0 +1,18 @@
+--- origsrc/rapidsvn-0.9.6/doc/svncpp/Makefile.am	2008-03-07 16:05:34.000000000 -0600
++++ src/rapidsvn-0.9.6/doc/svncpp/Makefile.am	2008-06-30 22:15:19.093750000 -0500
+@@ -7,7 +7,7 @@
+ doxygen-no:
+ 
+ doxygen-yes: 
+-	$(DOXYGEN) svncpp.dox
++	$(DOXYGEN) $(srcdir)/svncpp.dox
+ 
+ clean:
+ 	-rm -rf html
+--- origsrc/rapidsvn-0.9.6/include/Makefile.am	2008-03-07 16:05:16.000000000 -0600
++++ src/rapidsvn-0.9.6/include/Makefile.am	2008-06-30 22:28:01.234375000 -0500
+@@ -1,3 +1,3 @@
+ SUBDIRS=svncpp
+ 
+-nobase_include_HEADERS = ${wildcard svncpp/*.hpp}
++nobase_include_HEADERS = $(wildcard $(srcdir)/svncpp/*.hpp)

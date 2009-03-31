@@ -1,6 +1,7 @@
 category: Devel
-requires: cygwin libapr1 libaprutil1 libsvncpp1 subversion wx28-base wx28-gtk2
-sdesc: "GUI front-end for Subversion"
+requires: cygwin libapr1 libaprutil1 libgcc1 libstdc++6 subversion
+external-source: rapidsvn
+sdesc: "C++ Subversion bindings (runtime)"
 ldesc: "RapidSVN is a cross-platform GUI front-end for the Subversion 
 revision system written in C++ using the wxWidgets framework. This 
 project also includes a Subversion client C++ API."
