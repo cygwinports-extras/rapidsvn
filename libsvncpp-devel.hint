@@ -1,5 +1,5 @@
 category: Devel
-requires: cygwin libsvncpp2 libapr1-devel libaprutil1-devel libstdc++6-devel subversion-devel
+requires: libsvncpp2 libapr1-devel libaprutil1-devel libstdc++6-devel subversion-devel
 external-source: rapidsvn
 sdesc: "C++ Subversion bindings (development)"
 ldesc: "RapidSVN is a cross-platform GUI front-end for the Subversion 
