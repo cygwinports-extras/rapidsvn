@@ -1,0 +1,23 @@
+--- origsrc/rapidsvn-0.12.0-1/src/Makefile.am	2009-10-20 01:49:10.000000000 -0500
++++ src/rapidsvn-0.12.0-1/src/Makefile.am	2009-12-15 19:47:52.571799500 -0600
+@@ -87,8 +87,7 @@ rapidsvn_SOURCES= \
+ 	verblist.cpp \
+ 	view_action.cpp 
+ 
+-rapidsvn_LDFLAGS=-Lsvncpp
+-rapidsvn_LDADD= -lsvncpp \
++rapidsvn_LDADD= svncpp/libsvncpp.la \
+ 	$(SVN_LIBS) \
+ 	$(APR_LIBS) \
+ 	$(WX_LIBS) \
+--- origsrc/rapidsvn-0.12.0-1/src/svncpp/Makefile.am	2009-12-15 19:47:03.427988600 -0600
++++ src/rapidsvn-0.12.0-1/src/svncpp/Makefile.am	2009-12-15 19:48:04.563485400 -0600
+@@ -2,7 +2,7 @@ noinst_HEADERS=${wildcard *.hpp}
+ 
+ lib_LTLIBRARIES=libsvncpp.la
+ 
+-libsvncpp_la_LDFLAGS=-version-info 3:0:0
++libsvncpp_la_LDFLAGS=-version-info 3:0:0 -no-undefined
+ libsvncpp_la_SOURCES= \
+ 	apr.cpp \
+ 	client.cpp \

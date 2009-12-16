@@ -1,5 +1,5 @@
 category: Devel
-requires: libapr1 libgcc1 libstdc++6 libsvncpp2 libwx_baseu2.8_0 libwx_gtk2u2.8_0
+requires: libapr1 libgcc1 libstdc++6 libsvncpp3 libwx_baseu2.8_0 libwx_gtk2u2.8_0
 sdesc: "GUI front-end for Subversion"
 ldesc: "RapidSVN is a cross-platform GUI front-end for the Subversion 
 revision system written in C++ using the wxWidgets framework. This 

@@ -5,14 +5,14 @@ system written in C++ using the wxWidgets framework. This project also
 includes a Subversion client C++ API.
 
 Runtime requirements:
-  cygwin-1.7.0-50
-  libapr1-1.3.5-2
-  libaprutil1-1.3.7-2
-  libgcc1-4.3.2-2
-  libstdc++6-4.3.2-2
-  libwx_baseu2.8_0-2.8.10.1-1
-  libwx_gtk2u2.8_0-2.8.10.1-1
-  subversion-1.6.2-4
+  cygwin-1.7.0-67
+  libapr1-1.3.8-2
+  libaprutil1-1.3.9-2
+  libgcc1-4.3.4-3
+  libstdc++6-4.3.4-3
+  libwx_baseu2.8_0-2.8.10.1-2
+  libwx_gtk2u2.8_0-2.8.10.1-2
+  subversion-1.6.6-2
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -20,11 +20,11 @@ Build requirements:
   automake1.10-1.10.2-10
   binutils-2.19.51-1
   cppunit-1.12.1-1
-  cygport-0.9.8-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  gcc4-g++-4.3.2-2
-  libtool-2.2.7a-13
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
+  libtool-2.2.7a-14
   make-3.81-2
   sed-4.1.5-2
 
@@ -37,75 +37,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack rapidsvn-0.9.8-X-src.tar.bz2
+  unpack rapidsvn-0.12.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./rapidsvn-0.9.8-X.cygport all
+  cygport ./rapidsvn-0.12.0-X.cygport all
 
 This will create:
-  /usr/src/libsvncpp-devel-0.9.8-X.tar.bz2
-  /usr/src/libsvncpp2-0.9.8-X.tar.bz2
-  /usr/src/rapidsvn-0.9.8-X-src.tar.bz2
-  /usr/src/rapidsvn-0.9.8-X.tar.bz2
+  /usr/src/libsvncpp-devel-0.12.0-X.tar.bz2
+  /usr/src/libsvncpp3-0.12.0-X.tar.bz2
+  /usr/src/rapidsvn-0.12.0-X-src.tar.bz2
+  /usr/src/rapidsvn-0.12.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(rapidsvn)
-  /etc/postinstall/rapidsvn.sh
-  /usr/bin/rapidsvn.exe
-  /usr/share/applications/rapidsvn.desktop
-  /usr/share/doc/rapidsvn/AUTHORS
-  /usr/share/doc/rapidsvn/COPYING
-  /usr/share/doc/rapidsvn/ChangeLog
-  /usr/share/doc/rapidsvn/GPL.txt
-  /usr/share/doc/rapidsvn/HACKING.txt
-  /usr/share/doc/rapidsvn/LICENSE.txt
-  /usr/share/doc/rapidsvn/NEWS
-  /usr/share/doc/rapidsvn/README
-  /usr/share/icons/hicolor/128x128/apps/rapidsvn.png
-  /usr/share/icons/hicolor/16x16/apps/rapidsvn.png
-  /usr/share/icons/hicolor/32x32/apps/rapidsvn.png
-  /usr/share/icons/hicolor/48x48/apps/rapidsvn.png
-
-(libsvncpp2)
-  /usr/bin/cygsvncpp-2.dll
-
-(libsvncpp-devel)
-  /usr/include/svncpp/annotate_line.hpp
-  /usr/include/svncpp/apr.hpp
-  /usr/include/svncpp/client.hpp
-  /usr/include/svncpp/context.hpp
-  /usr/include/svncpp/context_listener.hpp
-  /usr/include/svncpp/datetime.hpp
-  /usr/include/svncpp/dirent.hpp
-  /usr/include/svncpp/entry.hpp
-  /usr/include/svncpp/exception.hpp
-  /usr/include/svncpp/info-.hpp
-  /usr/include/svncpp/info.hpp
-  /usr/include/svncpp/log_entry.hpp
-  /usr/include/svncpp/map_wrapper.hpp
-  /usr/include/svncpp/path.hpp
-  /usr/include/svncpp/pool.hpp
-  /usr/include/svncpp/property.hpp
-  /usr/include/svncpp/revision.hpp
-  /usr/include/svncpp/status.hpp
-  /usr/include/svncpp/status_selection.hpp
-  /usr/include/svncpp/string_wrapper.hpp
-  /usr/include/svncpp/targets.hpp
-  /usr/include/svncpp/url.hpp
-  /usr/include/svncpp/utility_wrapper.hpp
-  /usr/include/svncpp/vector_wrapper.hpp
-  /usr/include/svncpp/version.hpp
-  /usr/include/svncpp/wc.hpp
-  /usr/lib/libsvncpp.dll.a
-  /usr/lib/libsvncpp.la
-
-------------------
-
 Port Notes:
+
+----- version 0.12.0-1 -----
+Version bump.
 
 ----- version 0.9.8-2 -----
 Rebuilt for Subversion 1.6.
