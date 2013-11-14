@@ -1,0 +1,59 @@
+WX_VERSION=2.8
+WX_TOOLKIT=gtk2
+inherit wxwidgets
+
+NAME="rapidsvn"
+VERSION=0.12.0
+RELEASE=1
+CATEGORY="Devel"
+SUMMARY="GUI front-end for Subversion"
+DESCRIPTION="RapidSVN is a cross-platform GUI front-end for the Subversion
+revision system written in C++ using the wxWidgets framework. This project
+also includes a Subversion client C++ API."
+HOMEPAGE="http://rapidsvn.tigris.org/"
+SRC_URI="http://www.rapidsvn.org/download/release/${VERSION%.*}/${NAME}-${VERSION}-1.tar.gz"
+SRC_DIR="${NAME}-${VERSION}-1"
+
+PATCH_URI="
+	mirror://portage/dev-util/rapidsvn/files/rapidsvn-svncpp_link.patch
+	0.12.0-no-undefined.patch
+	0.9.6-vpath.patch
+"
+
+PKG_NAMES="${NAME} libsvncpp3 libsvncpp-devel"
+rapidsvn_CONTENTS="etc/ usr/bin/*.exe usr/share/"
+libsvncpp3_CATEGORY="Libs"
+libsvncpp3_SUMMARY="C++ Subversion bindings"
+libsvncpp3_CONTENTS="usr/bin/*-3.dll"
+libsvncpp_devel_CATEGORY="Libs"
+libsvncpp_devel_SUMMARY=${libsvncpp3_SUMMARY}
+libsvncpp_devel_CONTENTS="usr/include/ usr/lib/"
+
+CYGCONF_ARGS="
+	--with-apr-config=/usr/bin/apr-1-config
+	--with-apu-config=/usr/bin/apu-1-config
+	--with-cppunit-config=/usr/bin/cppunit-config
+	--with-neon-config=/usr/bin/neon-config
+	--with-svn-include=/usr/include
+	--with-svn-lib=/usr/lib
+	--with-wx-config=${WX_CONFIG}
+"
+
+src_test() {
+	cd ${B}/src/tests/svncpp
+	cygmake
+	./svncpptest
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	for i in 16x16 32x32 48x48 128x128
+	do
+		insinto /usr/share/icons/hicolor/${i}/apps
+		newins ${S}/src/res/bitmaps/${NAME}_${i}.png ${NAME}.png
+	done
+
+	make_desktop_entry ${NAME} RapidSVN ${NAME} "Development;RevisionControl"
+}

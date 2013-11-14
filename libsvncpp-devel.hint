@@ -1,7 +1,0 @@
-category: Devel
-requires: libsvncpp3 libapr1-devel libaprutil1-devel libstdc++6-devel subversion-devel
-external-source: rapidsvn
-sdesc: "C++ Subversion bindings (development)"
-ldesc: "RapidSVN is a cross-platform GUI front-end for the Subversion 
-revision system written in C++ using the wxWidgets framework. This 
-project also includes a Subversion client C++ API."
